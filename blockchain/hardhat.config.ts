@@ -17,5 +17,14 @@ export default defineConfig({
       type: "edr-simulated",
       chainType: "op",
     },
+
+    baseSepolia: {
+      type: "http",
+      chainType: "l1",
+      url: process.env.BASE_SEPOLIA_RPC_URL || "",
+      accounts: process.env.PRIVATE_KEY
+        ? [process.env.PRIVATE_KEY]
+        : [],
+    },
   },
 });
